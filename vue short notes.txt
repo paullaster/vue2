@@ -1,0 +1,204 @@
+VUE 2x
+
+Decalrative rendering:
+<div id="app">
+  {{ message }}
+</div>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+Directives:
+prefixed with v-
+-special attributes provided by vue
+-apply special reactive behavior to th rendered DOM
+
+Conditional Loops:
+v-if - conditional rendering
+v-for - looping and displaying array items
+
+Handling user input:
+v-on : enable interaction of users and the app.
+v-model: makes two way binding between form and input and app state a breeze
+
+Composing with components:
+decoupled
+reusable
+vue instance
+
+The Vue instance:
+Every Vue application start by creating a new Vue instance with the 'VUE' function:
+
+A view application consist of;
+root vue instance created with new Vue      
+
+	Data and Methods
+
+
+when a view instance is created, it adds all the properties found in its data {object} to Vue's reactivity system.
+when the value of the vlues of those properties chane, view will ""react"", updating to match the new values.
+
+When data cganges, the view will re-render.
+
+Instance properties and methods:
+
+$ - uses dollar symbol
+vm.$data === data
+vm.#el === document.getElementById('example')
+
+//Instace method:
+vm.$watch('a', function(sm, sm2){
+	//this callback is called when a changes
+})
+
+
+Instance Lifecycle Hooks
+
+Init => setup data observation => compile teplate => mount the instance on the DOM => update the DOM when data changes
+
+--It also run life cycle hooks along the way. 
+
+vue hooks: 
+created,
+mounted,
+updated,
+destroyed
+
+
+		Template Syntax:
+
+Vue.js uses an HTML-based template syntax that allow you to declaratively bind the rendered DOM to the underlying Vue instance's data.
+
+		Interpolation:
+1. Text
+Most basic for of data binding, text interpolation
+uses the "Mustache" syntax
+<span> {{message}} </span>
+
+v-once idrective: for performing one-time interpolation.
+
+<span v-once>This will never change:{{msg}}</span>
+
+
+2. RawHTML
+the double mustache interprets the data as plain text, not HTML, to output real HTML, you'll need to use, v-html directive.
+
+
+3. Attributes
+Mustaches can not be used inside HTML attributes, we use v-bind directive.
+
+- for boolean attributes,
+<button v-bind:disabled="isButtonActive">BTN</button>
+when the isButtonActive is null, undefined,false, the disabled attribute will not even be included in thr rendered button element
+
+4. Using JavaScript expressions:
+{{ true ? "laugh": "cry"}}
+
+
+		Directives:
+special attributes prefixed with v. 
+value expected to be a single javascript expression.
+except v-for
+directive's job is to actively apply side effects to the DOM when the value of its expresion changes.
+
+=> Arguments:
+             Some directive can take arguments, donated by a colon after the directive name. 
+v-bind=> used for reactively updating an HTML attribute 
+v-on => listens to DOM events
+
+ => Dynamic Arguments:
+ 	It is possible to use javascript like expression in a directive argument by wrapping it with square brackets:
+
+	v-bind:[somethingToDo]
+
+somethingToDo - will be dynamically evaluated as a JavaScript expression and it's evaluated value will be used as the final value for the argument.
+
+
+Dynamic argument value constraints:
+
+1. Dynamic arguments are expected to evaluate to a string with exception of null. The special value null can be used to explicitly remove the binding
+
+Dynamic argument Expression constraints:
+ - Have syntax constraints.
+ - characters such as spaces, quotes, are invalid inside 
+	HTML attribute names.
+
+=> Modifiers:
+	This are special postfixes denoted by a dot (.)
+	It indicates that the directives should be bound in some special way.
+ ... .prevent => tells the v-on directive to call event.preventDefault()
+
+<form v-on:submit.prevent="onSubmit"></form>
+
+
+			Shorthands:
+v- prefix serves as a visual cue for identifying vue-specific attributes in your templates
+
+=> v-bind shorthand:
+	
+ <a v-bind:href="url"> </a>
+ <a :href="url"></a>
+ <a :[key]="url"></a>
+
+=> v-on shorthand:
+<a v-on:click="doSomething"> </a>
+<a @click="doSomething"> </a>
+<a @[event]="doSomething"> </a>
+
+
+	Computed Properties and Watchers:
+Computed properties:
+ used for expressions involving complex logic.
+ the property could be reused
+
+//Computed getter:
+
+
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+                                                                                                                                                   
+
+Computed Caching vs Methods:
+
+- computed properties are cached based on their reactive dependencies.
+- A computed property will only reevaluate when some of it's reactive dependencies have changed.
+
+- Method invocation will always run the function whenever a re-render happens
+
+
+
+Computed vs Watched Property:
+- watch property- observer and react to data changes
+
+
+Computed Setter:
+ - computed properties by default are getter-only.
+ - but a setter can always be provided when needed
+
+
+Watchers:
+
+
+
+
+
+
