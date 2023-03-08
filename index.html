@@ -9,7 +9,10 @@
 <body>
     <div id="app">
         {{message}}
-        <span v-once> </span>
+        <span v-once>
+          {{change}}
+        </span>
+
     </div>
     <div id="app-2">
         <span v-bind:title="message">
@@ -61,7 +64,8 @@
             el: '#app',
             data: {
                 message:"Hello, world from vue 2x",
-                change: "One time"
+                change: "One time",
+                rawHTML: "<span>true</span>"
             }
         }); 
         var app2 = new Vue({
