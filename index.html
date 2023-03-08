@@ -40,8 +40,8 @@
       <p>
         {{message}}</p>
       </p>
-      <p>{{reverseMessage}}</p>
-      <!-- <button v-on:click="reverseMessage">Reverse the message</button> -->
+      <!-- <p>{{reverseMessage}}</p> -->
+      <button v-on:click="reverseMessage">Reverse the message</button>
     </div>
     <div id="app-6">
       <p>{{message}}</p>
@@ -104,9 +104,9 @@
         data: {
           message: "Hello, Paullaster!"
         },
-        computed: {
+        methods: {
           reverseMessage: function(){
-            return this.message = this.message.split('').reverse().join('');
+            this.message = this.message.split('').reverse().join('');
           }
         }
       });
