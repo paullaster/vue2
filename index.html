@@ -150,6 +150,13 @@
     data: {
       firstName: 'John',
       lastName: 'Smith',
+    },
+    computed: {
+      fullName: {
+        get(){
+          return this.firstName + ' ' + this.lastName;
+        }
+      }
     }
   });
     </script>
