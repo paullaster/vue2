@@ -255,6 +255,8 @@ v-else, for rendering otherwise block in a v-if directive valur is false
 		List rendering:
 v-for directive: for rendeirng both array and objects.
 
+		Maintaining state:
+
 
 
 
