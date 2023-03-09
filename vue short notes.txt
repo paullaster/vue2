@@ -257,7 +257,7 @@ v-for directive: for rendeirng both array and objects.
 
 		Maintaining state:
 
-
+		:key attribute
 
 
 
