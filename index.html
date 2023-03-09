@@ -96,8 +96,8 @@
 
       <p>VFor to interate objects</p>
       <ul>
-        <li v-for="value in testObject">
-          {{value}}
+        <li v-for="(value, key) in testObject">
+          {{key}} : {{value}}
         </li>
       </ul>
     </div>
