@@ -211,13 +211,15 @@ v-bind:class- to dynamically toggle classes.
 
 We can also bind to a computed property that returns object.
 
-Array Syntax:
+2. Array Syntax:
 We can pass array to v-bind:class to apply list of classes
+<div v-bind:class="[activeClass, errorclass]"></div>
+
+3. With Components:
+When you use :class attribute on custome component, those classes will be added to the component's root elements, it doesn't overwrite the exisiting classes.
 
 
-
-
-
+		Binding inline styles:
 
 
 
