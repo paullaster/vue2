@@ -179,12 +179,12 @@
     el: '#app-10',
     data: {
       isActive: true,
-      isError: false,
+      isError: null,
     },
     computed: {
-      classObject: function(){
+      classObject(){
         return {
-          active: this.active && !this.isError,
+          active: this.isActive && !this.isError,
           'text-dander': this.isError && this.isError.type === 'fatal'
         }
       }
