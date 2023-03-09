@@ -182,7 +182,7 @@
       isError: null,
     },
     computed: {
-      classObject(){
+      classObject: function(){
         return {
           active: this.isActive && !this.isError,
           'text-dander': this.isError && this.isError.type === 'fatal'
