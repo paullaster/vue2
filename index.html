@@ -80,7 +80,7 @@
     <div id="app-10">
       <p v-bind:class="[activeClass, errorClass]"> I want to check it here</p>
       <template v-if="checkStatus">
-        <div>
+        <div v-show="display">
           knitting
         </div>
         <div>
