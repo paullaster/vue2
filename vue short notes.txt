@@ -252,7 +252,8 @@ v-else, for rendering otherwise block in a v-if directive valur is false
 - v-show only toggle the display, the element will always be rendered
 
 
-		List rendering
+		List rendering:
+v-for directive: for rendeirng both array and objects.
 
 
 
