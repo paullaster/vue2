@@ -220,6 +220,47 @@ When you use :class attribute on custome component, those classes will be added 
 
 
 		Binding inline styles:
+1. Object Syntax:
+<div v-bind:style=styleObjects></div>
+
+data: {
+	color: 'red',
+	fontisze: '14px'
+}
+
+2. Array Syntax:
+The array syntax for v-bind:style allows application of multiple style object element.
+<div v-bind:style="[baseStyles, overrridingStyles]"></div>
+
+
+
+
+		Condtional Rendering:
+
+V-if:
+-Directive v-if is used to conditionally render a block.
+-The block only renders if the directive expression returns a truthy value.
+v-else, for rendering otherwise block in a v-if directive valur is false
+
+
+# Conditional groups with v-if on template
+
+
+# Controlling reusable elements with key
+	V-SHOW:
+-conditional display of an element 
+- v-show only toggle the display, the element will always be rendered
+
+
+		List rendering
+
+
+
+
+
+
+
+
 
 
 
