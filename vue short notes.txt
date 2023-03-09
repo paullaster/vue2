@@ -259,7 +259,11 @@ v-for directive: for rendeirng both array and objects.
 
 		:key attribute
 
+Array change detections:
 
+
+
+Displaying filtered/Sorted Results:
 
 
 
