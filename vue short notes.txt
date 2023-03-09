@@ -197,6 +197,43 @@ Computed Setter:
 
 Watchers:
 
+			Class and Style bindings:
+since class list and inline styles are both attributes, we can use v-bind to handle them: we only need to calculate a final string with our expressions.
+Vue provide enhancement when v-bind is used with class and style.
+
+	Bindin HTML classes:
+
+1. Object syntax:
+v-bind:class- to dynamically toggle classes.
+<div v-bind:class='{active: isActive}'></div>
+- can have multiple classes toggled.
+- v-bind can co-exist the plain class attribute
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
