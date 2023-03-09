@@ -183,7 +183,10 @@
     },
     computed: {
       classObject: function(){
-        
+        return {
+          active: this.active && !this.isError,
+          'text-dander': this.isError && this.isError.type === 'fatal'
+        }
       }
     }
   });
