@@ -241,8 +241,8 @@
       }
     },
     methods: {
-      odd: function(){
-        
+      odd: function(n){
+        return this.numbers.filter(function(n){return n % 2 !== 0})
       }
     }
   });
