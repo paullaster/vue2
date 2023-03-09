@@ -211,6 +211,8 @@ v-bind:class- to dynamically toggle classes.
 
 We can also bind to a computed property that returns object.
 
+Array Syntax:
+We can pass array to v-bind:class to apply list of classes
 
 
 

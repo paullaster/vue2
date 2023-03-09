@@ -182,12 +182,15 @@
       isError: true,
     },
     computed: {
-      classObject: function(){
+      activeClass: function(){
         return {
           active: this.isActive && !this.isError,
+        }
+      },
+      errorClass: function(){
+        return {
           'text-danger': this.isError,
         }
-      }
     }
   });
     </script>
