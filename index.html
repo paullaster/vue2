@@ -233,7 +233,7 @@
     },
     computed:{
       evenNumber: function(){
-        
+        return this.numbers.filter( function(n){return n % 2 === 0})
       }
     }
   });
