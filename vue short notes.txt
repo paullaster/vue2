@@ -209,11 +209,7 @@ v-bind:class- to dynamically toggle classes.
 - can have multiple classes toggled.
 - v-bind can co-exist the plain class attribute
 
-
-
-
-
-
+We can also bind to a computed property that returns object.
 
 
 
